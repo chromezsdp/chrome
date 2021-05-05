@@ -11,7 +11,7 @@ notifications:      #通知
     on_failure: always
 
 install:                             #install阶段 安装依赖
-  # - npm install -g gitbook-cli       #安装gitbook 
+  - npm install -g gitbook-cli       #安装gitbook 
   - gitbook install                  #安装插件
   # - npm install -g gitbook-summary   #使自动生成SUMMARY.md的一个工具
 
