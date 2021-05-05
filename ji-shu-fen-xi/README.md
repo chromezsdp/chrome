@@ -12,7 +12,7 @@ description: 对chrome源代码的学习
 
 ### 目的
 
-* 学习优秀的设计实现
+* 学习chrome优秀设计
 * 分享chrome中的技术
 
 
