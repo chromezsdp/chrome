@@ -7,6 +7,7 @@
         "expandable-chapters-small",
         "splitter",
         "lightbox",
+        "anchor-navigation-ex",
         "-lunr",
         "-search",
         "search-pro",
@@ -42,6 +43,10 @@
                 "viber",
                 "whatsapp"
             ]
+        },
+        "anchor-navigation-ex": {
+            "showLevel": false,
+            "showGoTop": false
         },
         "donate": {
             "wechat": "https://gitee.com/zsdp/chromeimage/raw/master/weixin.png",
