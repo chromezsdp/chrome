@@ -1,0 +1,59 @@
+{
+    "title": "Chrome知识店铺",
+    "description": "分享Chrome相关知识",
+    "language": "zh-hans",
+    "plugins": [
+        "back-to-top-button",
+        "expandable-chapters-small",
+        "splitter",
+        "lightbox",
+        "-lunr",
+        "-search",
+        "search-pro",
+        "pageview-count",
+        "code",
+        "-sharing",
+        "sharing-plus",
+        "donate",
+        "auto-scroll-table",
+        "accordion"
+    ],
+    "pluginsConfig": {
+        "sharing": {
+            "douban": true,
+            "facebook": true,
+            "google": true,
+            "pocket": true,
+            "qq": true,
+            "qzone": true,
+            "twitter": true,
+            "weibo": true,
+            "all": [
+                "douban",
+                "facebook",
+                "google",
+                "instapaper",
+                "linkedin",
+                "twitter",
+                "weibo",
+                "messenger",
+                "qq",
+                "qzone",
+                "viber",
+                "whatsapp"
+            ]
+        },
+        "donate": {
+            "wechat": "https://gitee.com/zsdp/chromeimage/raw/master/weixin.png",
+            "alipay": "https://gitee.com/zsdp/chromeimage/raw/master/zhifubao.png",
+            "title": "",
+            "button": "Donate",
+            "alipayText": "默认值：支付宝捐赠",
+            "wechatText": "微信捐赠"
+        }
+    },
+    "ignores": [
+        "_book",
+        "node_modules"
+    ]
+}
