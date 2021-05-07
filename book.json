@@ -48,7 +48,7 @@
             "alipay": "https://gitee.com/zsdp/chromeimage/raw/master/zhifubao.png",
             "title": "",
             "button": "Donate",
-            "alipayText": "默认值：支付宝捐赠",
+            "alipayText": "支付宝捐赠",
             "wechatText": "微信捐赠"
         }
     },
