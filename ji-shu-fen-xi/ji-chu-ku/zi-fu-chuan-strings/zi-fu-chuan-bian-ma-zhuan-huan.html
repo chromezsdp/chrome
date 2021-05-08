@@ -1,0 +1,1350 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字符串编码转换 · Chrome知识店铺</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="chrome中字符串编码转换实现方式">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="kua-ping-tai-zi-fu-chu-li.html" />
+    
+    
+    <link rel="prev" href="zi-fu-chuan-lei-xing-zhuan-huan.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    chrome知识店铺
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../geng-xin-ji-hua.html">
+            
+                <a href="../../../geng-xin-ji-hua.html">
+            
+                    
+                    更新计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../cha-jian-fen-xiang.html">
+            
+                <a href="../../../cha-jian-fen-xiang.html">
+            
+                    
+                    插件分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../xin-shou-jiao-cheng.html">
+            
+                <a href="../../../xin-shou-jiao-cheng.html">
+            
+                    
+                    新手教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../ji-shu-dong-tai.html">
+            
+                <a href="../../../ji-shu-dong-tai.html">
+            
+                    
+                    技术动态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    技术分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../wang-luo-zhan/">
+            
+                <a href="../../wang-luo-zhan/">
+            
+                    
+                    网络栈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../wang-luo-zhan/dns-jie-xi.html">
+            
+                <a href="../../wang-luo-zhan/dns-jie-xi.html">
+            
+                    
+                    DNS解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../nei-he/">
+            
+                <a href="../../nei-he/">
+            
+                    
+                    内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../nei-he/blink.html">
+            
+                <a href="../../nei-he/blink.html">
+            
+                    
+                    Blink
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    基础库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../win.html">
+            
+                <a href="../win.html">
+            
+                    
+                    win
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../tong-yong-util.html">
+            
+                <a href="../tong-yong-util.html">
+            
+                    
+                    通用（util）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../shi-jian-zhui-zong-traceevent.html">
+            
+                <a href="../shi-jian-zhui-zong-traceevent.html">
+            
+                    
+                    事件追踪（trace_event）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" data-path="../ding-shi-qi-timer.html">
+            
+                <a href="../ding-shi-qi-timer.html">
+            
+                    
+                    定时器（timer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="../shi-jian-time.html">
+            
+                <a href="../shi-jian-time.html">
+            
+                    
+                    时间（time）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.6" data-path="../xian-cheng-threading.html">
+            
+                <a href="../xian-cheng-threading.html">
+            
+                    
+                    线程（threading）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.7" data-path="../di-san-fang-ku-thirdparty.html">
+            
+                <a href="../di-san-fang-ku-thirdparty.html">
+            
+                    
+                    第三方库（third_party）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.8" data-path="../ce-shi-test.html">
+            
+                <a href="../ce-shi-test.html">
+            
+                    
+                    测试（test）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.9" data-path="../ren-wu-task.html">
+            
+                <a href="../ren-wu-task.html">
+            
+                    
+                    任务（task）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.10" data-path="../xi-tong-system.html">
+            
+                <a href="../xi-tong-system.html">
+            
+                    
+                    系统（system）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.11" data-path="../tong-bu-synchronization.html">
+            
+                <a href="../tong-bu-synchronization.html">
+            
+                    
+                    同步（synchronization）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    字符串（strings）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.12.1" data-path="zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                    
+                    字符串类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3.12.2" data-path="zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                    
+                    字符串编码转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12.3" data-path="kua-ping-tai-zi-fu-chu-li.html">
+            
+                <a href="kua-ping-tai-zi-fu-chu-li.html">
+            
+                    
+                    跨平台字符处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.13" data-path="../fen-xi-qi-profiler.html">
+            
+                <a href="../fen-xi-qi-profiler.html">
+            
+                    
+                    分析器（profiler）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.14" data-path="../jin-cheng-process.html">
+            
+                <a href="../jin-cheng-process.html">
+            
+                    
+                    进程（process）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.15" data-path="../dian-yuan-jian-kong-powermonitor.html">
+            
+                <a href="../dian-yuan-jian-kong-powermonitor.html">
+            
+                    
+                    电源监控(power_monitor)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.16" data-path="../posix.html">
+            
+                <a href="../posix.html">
+            
+                    
+                    posix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.17" data-path="../shu-zi-numerics.html">
+            
+                <a href="../shu-zi-numerics.html">
+            
+                    
+                    数字（numerics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.18" data-path="../du-liang-metrics.html">
+            
+                <a href="../du-liang-metrics.html">
+            
+                    
+                    度量（metrics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.19" data-path="../xiao-xi-xun-huan-messageloop.html">
+            
+                <a href="../xiao-xi-xun-huan-messageloop.html">
+            
+                    
+                    消息循环（message_loop）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.20" data-path="../nei-cun-memory.html">
+            
+                <a href="../nei-cun-memory.html">
+            
+                    
+                    内存（memory）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.21" data-path="../mac.html">
+            
+                <a href="../mac.html">
+            
+                    
+                    mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.22" data-path="../json.html">
+            
+                <a href="../json.html">
+            
+                    
+                    json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.23" data-path="../guo-ji-hua-i18n.html">
+            
+                <a href="../guo-ji-hua-i18n.html">
+            
+                    
+                    国际化（i18n）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.24" data-path="../ha-xi-hash.html">
+            
+                <a href="../ha-xi-hash.html">
+            
+                    
+                    哈希（hash）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.25" data-path="../fuchsia.html">
+            
+                <a href="../fuchsia.html">
+            
+                    
+                    fuchsia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.26" data-path="../wen-jian-files.html">
+            
+                <a href="../wen-jian-files.html">
+            
+                    
+                    文件（files）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.27" data-path="../tiao-shi-qi-debug.html">
+            
+                <a href="../tiao-shi-qi-debug.html">
+            
+                    
+                    调试器（debug）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.28" data-path="../rong-qi-containers.html">
+            
+                <a href="../rong-qi-containers.html">
+            
+                    
+                    容器（containers）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.29" data-path="../fen-pei-qi-allocator.html">
+            
+                <a href="../fen-pei-qi-allocator.html">
+            
+                    
+                    分配器（allocator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >字符串编码转换</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;"><b></b>&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;</a></li><ul><li><span class="title-icon "></span><a href="#&#x76F8;&#x5173;&#x6587;&#x4EF6;"><b></b>&#x76F8;&#x5173;&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><b></b>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><b></b>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#fuzzer"><b></b>fuzzer</a></li></ul></ul></ul></div><h1 id="&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;</h1>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x6D89;&#x53CA;&#x5BBD;&#x5B57;&#x8282;&#x8868;&#x793A;&#x6CD5;&#x4E0E;UTF-8&#x8868;&#x793A;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3001;&#x5BBD;&#x5B57;&#x8282;&#x8868;&#x793A;&#x6CD5;&#x4E0E;UTF-16&#x8868;&#x793A;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3001;UTF-8&#x8868;&#x793A;&#x6CD5;&#x4E0E;UTF-16&#x8868;&#x793A;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3001;UTF-16&#x8868;&#x793A;&#x6CD5;&#x4E8E;ASCII&#x8868;&#x793A;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3001;ASCII&#x8868;&#x793A;&#x6CD5;&#x5BBD;&#x5B57;&#x8282;&#x8868;&#x793A;&#x6CD5;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x3002;</p>
+<h2 id="&#x76F8;&#x5173;&#x6587;&#x4EF6;"><a name="&#x76F8;&#x5173;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x76F8;&#x5173;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x6587;&#x4EF6;</h2>
+<ul>
+<li>base/strings/utf_string_conversions.h  // &#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x5B9A;&#x4E49;</li>
+<li>base/strings/utf_string_conversions.cc  // &#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+<li>base/strings/utf_string_conversions_fuzzer.cc // &#x5B57;&#x7B26;&#x4E32;&#x7F16;&#x7801;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+</ul>
+<h2 id="&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><a name="&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;</h2>
+<pre><code class="lang-cpp">// base/strings/utf_string_conversions.h 
+namespace base {
+
+// These convert between UTF-8, -16, and -32 strings. They are potentially slow,
+// so avoid unnecessary conversions. The low-level versions return a boolean
+// indicating whether the conversion was 100% valid. In this case, it will still
+// do the best it can and put the result in the output buffer. The versions that
+// return strings ignore this error and just return the best conversion
+// possible.
+BASE_EXPORT bool WideToUTF8(const wchar_t* src, size_t src_len,
+                            std::string* output);
+BASE_EXPORT std::string WideToUTF8(WStringPiece wide) WARN_UNUSED_RESULT;
+BASE_EXPORT bool UTF8ToWide(const char* src, size_t src_len,
+                            std::wstring* output);
+BASE_EXPORT std::wstring UTF8ToWide(StringPiece utf8) WARN_UNUSED_RESULT;
+
+BASE_EXPORT bool WideToUTF16(const wchar_t* src,
+                             size_t src_len,
+                             std::u16string* output);
+BASE_EXPORT std::u16string WideToUTF16(WStringPiece wide) WARN_UNUSED_RESULT;
+BASE_EXPORT bool UTF16ToWide(const char16_t* src,
+                             size_t src_len,
+                             std::wstring* output);
+BASE_EXPORT std::wstring UTF16ToWide(StringPiece16 utf16) WARN_UNUSED_RESULT;
+
+BASE_EXPORT bool UTF8ToUTF16(const char* src,
+                             size_t src_len,
+                             std::u16string* output);
+BASE_EXPORT std::u16string UTF8ToUTF16(StringPiece utf8) WARN_UNUSED_RESULT;
+BASE_EXPORT bool UTF16ToUTF8(const char16_t* src,
+                             size_t src_len,
+                             std::string* output);
+BASE_EXPORT std::string UTF16ToUTF8(StringPiece16 utf16) WARN_UNUSED_RESULT;
+
+// This converts an ASCII string, typically a hardcoded constant, to a UTF16
+// string.
+BASE_EXPORT std::u16string ASCIIToUTF16(StringPiece ascii) WARN_UNUSED_RESULT;
+
+// Converts to 7-bit ASCII by truncating. The result must be known to be ASCII
+// beforehand.
+BASE_EXPORT std::string UTF16ToASCII(StringPiece16 utf16) WARN_UNUSED_RESULT;
+
+#if defined(WCHAR_T_IS_UTF16)
+// This converts an ASCII string, typically a hardcoded constant, to a wide
+// string.
+BASE_EXPORT std::wstring ASCIIToWide(StringPiece ascii) WARN_UNUSED_RESULT;
+
+// Converts to 7-bit ASCII by truncating. The result must be known to be ASCII
+// beforehand.
+BASE_EXPORT std::string WideToASCII(WStringPiece wide) WARN_UNUSED_RESULT;
+#endif  // defined(WCHAR_T_IS_UTF16)
+
+// The conversion functions in this file should not be used to convert string
+// literals. Instead, the corresponding prefixes (e.g. u&quot;&quot; for UTF16 or L&quot;&quot; for
+// Wide) should be used. Deleting the overloads here catches these cases at
+// compile time.
+template &lt;size_t N&gt;
+std::u16string WideToUTF16(const wchar_t (&amp;str)[N]) {
+  static_assert(N == 0, &quot;Error: Use the u\&quot;...\&quot; prefix instead.&quot;);
+  return std::u16string();
+}
+
+// TODO(crbug.com/1189439): Also disallow passing string constants in tests.
+#if !defined(UNIT_TEST)
+template &lt;size_t N&gt;
+std::u16string ASCIIToUTF16(const char (&amp;str)[N]) {
+  static_assert(N == 0, &quot;Error: Use the u\&quot;...\&quot; prefix instead.&quot;);
+  return std::u16string();
+}
+
+// Mutable character arrays are usually only populated during runtime. Continue
+// to allow this conversion.
+template &lt;size_t N&gt;
+std::u16string ASCIIToUTF16(char (&amp;str)[N]) {
+  return ASCIIToUTF16(StringPiece(str));
+}
+#endif
+
+}  // namespace base
+</code></pre>
+<h2 id="&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><a name="&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-cpp"><span class="hljs-comment">// base/strings/utf_string_conversions.cc</span>
+<span class="hljs-keyword">namespace</span> base {
+
+<span class="hljs-keyword">namespace</span> {
+
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int32_t</span> kErrorCodePoint = <span class="hljs-number">0xFFFD</span>;
+
+<span class="hljs-comment">// Size coefficient ----------------------------------------------------------</span>
+<span class="hljs-comment">// The maximum number of codeunits in the destination encoding corresponding to</span>
+<span class="hljs-comment">// one codeunit in the source encoding.</span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> SrcChar, <span class="hljs-keyword">typename</span> DestChar&gt;
+<span class="hljs-keyword">struct</span> SizeCoefficient {
+  <span class="hljs-keyword">static_assert</span>(<span class="hljs-keyword">sizeof</span>(SrcChar) &lt; <span class="hljs-keyword">sizeof</span>(DestChar),
+                <span class="hljs-string">&quot;Default case: from a smaller encoding to the bigger one&quot;</span>);
+
+  <span class="hljs-comment">// ASCII symbols are encoded by one codeunit in all encodings.</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> value = <span class="hljs-number">1</span>;
+};
+
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> SizeCoefficient&lt;<span class="hljs-keyword">char16_t</span>, <span class="hljs-keyword">char</span>&gt; {
+  <span class="hljs-comment">// One UTF-16 codeunit corresponds to at most 3 codeunits in UTF-8.</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> value = <span class="hljs-number">3</span>;
+};
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(WCHAR_T_IS_UTF32)</span>
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> SizeCoefficient&lt;<span class="hljs-keyword">wchar_t</span>, <span class="hljs-keyword">char</span>&gt; {
+  <span class="hljs-comment">// UTF-8 uses at most 4 codeunits per character.</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> value = <span class="hljs-number">4</span>;
+};
+
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">struct</span> SizeCoefficient&lt;<span class="hljs-keyword">wchar_t</span>, <span class="hljs-keyword">char16_t</span>&gt; {
+  <span class="hljs-comment">// UTF-16 uses at most 2 codeunits per character.</span>
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> value = <span class="hljs-number">2</span>;
+};
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// defined(WCHAR_T_IS_UTF32)</span></span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> SrcChar, <span class="hljs-keyword">typename</span> DestChar&gt;
+<span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> size_coefficient_v =
+    SizeCoefficient&lt;<span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;SrcChar&gt;, <span class="hljs-built_in">std</span>::<span class="hljs-keyword">decay_t</span>&lt;DestChar&gt;&gt;::value;
+
+<span class="hljs-comment">// UnicodeAppendUnsafe --------------------------------------------------------</span>
+<span class="hljs-comment">// Function overloads that write code_point to the output string. Output string</span>
+<span class="hljs-comment">// has to have enough space for the codepoint.</span>
+
+<span class="hljs-comment">// Convenience typedef that checks whether the passed in type is integral (i.e.</span>
+<span class="hljs-comment">// bool, char, int or their extended versions) and is of the correct size.</span>
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> Char, <span class="hljs-keyword">size_t</span> N&gt;
+<span class="hljs-keyword">using</span> EnableIfBitsAre = <span class="hljs-built_in">std</span>::<span class="hljs-keyword">enable_if_t</span>&lt;<span class="hljs-built_in">std</span>::is_integral&lt;Char&gt;::<span class="hljs-function">value &amp;&amp;
+                                             CHAR_BIT * <span class="hljs-title">sizeof</span><span class="hljs-params">(Char)</span> </span>== N,
+                                         <span class="hljs-keyword">bool</span>&gt;;
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> Char, EnableIfBitsAre&lt;Char, <span class="hljs-number">8</span>&gt; = <span class="hljs-literal">true</span>&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">UnicodeAppendUnsafe</span><span class="hljs-params">(Char* out, int32_t* size, uint32_t code_point)</span> </span>{
+  CBU8_APPEND_UNSAFE(out, *size, code_point);
+}
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> Char, EnableIfBitsAre&lt;Char, <span class="hljs-number">16</span>&gt; = <span class="hljs-literal">true</span>&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">UnicodeAppendUnsafe</span><span class="hljs-params">(Char* out, int32_t* size, uint32_t code_point)</span> </span>{
+  CBU16_APPEND_UNSAFE(out, *size, code_point);
+}
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> Char, EnableIfBitsAre&lt;Char, <span class="hljs-number">32</span>&gt; = <span class="hljs-literal">true</span>&gt;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">UnicodeAppendUnsafe</span><span class="hljs-params">(Char* out, int32_t* size, uint32_t code_point)</span> </span>{
+  out[(*size)++] = code_point;
+}
+
+<span class="hljs-comment">// DoUTFConversion ------------------------------------------------------------</span>
+<span class="hljs-comment">// Main driver of UTFConversion specialized for different Src encodings.</span>
+<span class="hljs-comment">// dest has to have enough room for the converted text.</span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> DestChar&gt;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">DoUTFConversion</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* src,
+                     int32_t src_len,
+                     DestChar* dest,
+                     int32_t* dest_len)</span> </span>{
+  <span class="hljs-keyword">bool</span> success = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int32_t</span> i = <span class="hljs-number">0</span>; i &lt; src_len;) {
+    <span class="hljs-keyword">int32_t</span> code_point;
+    CBU8_NEXT(src, i, src_len, code_point);
+
+    <span class="hljs-keyword">if</span> (!IsValidCodepoint(code_point)) {
+      success = <span class="hljs-literal">false</span>;
+      code_point = kErrorCodePoint;
+    }
+
+    UnicodeAppendUnsafe(dest, dest_len, code_point);
+  }
+
+  <span class="hljs-keyword">return</span> success;
+}
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> DestChar&gt;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">DoUTFConversion</span><span class="hljs-params">(<span class="hljs-keyword">const</span> char16_t* src,
+                     int32_t src_len,
+                     DestChar* dest,
+                     int32_t* dest_len)</span> </span>{
+  <span class="hljs-keyword">bool</span> success = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">auto</span> ConvertSingleChar = [&amp;success](<span class="hljs-keyword">char16_t</span> in) -&gt; <span class="hljs-keyword">int32_t</span> {
+    <span class="hljs-keyword">if</span> (!CBU16_IS_SINGLE(in) || !IsValidCodepoint(in)) {
+      success = <span class="hljs-literal">false</span>;
+      <span class="hljs-keyword">return</span> kErrorCodePoint;
+    }
+    <span class="hljs-keyword">return</span> in;
+  };
+
+  <span class="hljs-keyword">int32_t</span> i = <span class="hljs-number">0</span>;
+
+  <span class="hljs-comment">// Always have another symbol in order to avoid checking boundaries in the</span>
+  <span class="hljs-comment">// middle of the surrogate pair.</span>
+  <span class="hljs-keyword">while</span> (i &lt; src_len - <span class="hljs-number">1</span>) {
+    <span class="hljs-keyword">int32_t</span> code_point;
+
+    <span class="hljs-keyword">if</span> (CBU16_IS_LEAD(src[i]) &amp;&amp; CBU16_IS_TRAIL(src[i + <span class="hljs-number">1</span>])) {
+      code_point = CBU16_GET_SUPPLEMENTARY(src[i], src[i + <span class="hljs-number">1</span>]);
+      <span class="hljs-keyword">if</span> (!IsValidCodepoint(code_point)) {
+        code_point = kErrorCodePoint;
+        success = <span class="hljs-literal">false</span>;
+      }
+      i += <span class="hljs-number">2</span>;
+    } <span class="hljs-keyword">else</span> {
+      code_point = ConvertSingleChar(src[i]);
+      ++i;
+    }
+
+    UnicodeAppendUnsafe(dest, dest_len, code_point);
+  }
+
+  <span class="hljs-keyword">if</span> (i &lt; src_len)
+    UnicodeAppendUnsafe(dest, dest_len, ConvertSingleChar(src[i]));
+
+  <span class="hljs-keyword">return</span> success;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(WCHAR_T_IS_UTF32)</span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> DestChar&gt;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">DoUTFConversion</span><span class="hljs-params">(<span class="hljs-keyword">const</span> wchar_t* src,
+                     int32_t src_len,
+                     DestChar* dest,
+                     int32_t* dest_len)</span> </span>{
+  <span class="hljs-keyword">bool</span> success = <span class="hljs-literal">true</span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int32_t</span> i = <span class="hljs-number">0</span>; i &lt; src_len; ++i) {
+    <span class="hljs-keyword">int32_t</span> code_point = src[i];
+
+    <span class="hljs-keyword">if</span> (!IsValidCodepoint(code_point)) {
+      success = <span class="hljs-literal">false</span>;
+      code_point = kErrorCodePoint;
+    }
+
+    UnicodeAppendUnsafe(dest, dest_len, code_point);
+  }
+
+  <span class="hljs-keyword">return</span> success;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// defined(WCHAR_T_IS_UTF32)</span></span>
+
+<span class="hljs-comment">// UTFConversion --------------------------------------------------------------</span>
+<span class="hljs-comment">// Function template for generating all UTF conversions.</span>
+
+<span class="hljs-keyword">template</span> &lt;<span class="hljs-keyword">typename</span> InputString, <span class="hljs-keyword">typename</span> DestString&gt;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTFConversion</span><span class="hljs-params">(<span class="hljs-keyword">const</span> InputString&amp; src_str, DestString* dest_str)</span> </span>{
+  <span class="hljs-keyword">if</span> (IsStringASCII(src_str)) {
+    dest_str-&gt;assign(src_str.begin(), src_str.end());
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+
+  dest_str-&gt;resize(src_str.length() *
+                   size_coefficient_v&lt;<span class="hljs-keyword">typename</span> InputString::value_type,
+                                      <span class="hljs-keyword">typename</span> DestString::value_type&gt;);
+
+  <span class="hljs-comment">// Empty string is ASCII =&gt; it OK to call operator[].</span>
+  <span class="hljs-keyword">auto</span>* dest = &amp;(*dest_str)[<span class="hljs-number">0</span>];
+
+  <span class="hljs-comment">// ICU requires 32 bit numbers.</span>
+  <span class="hljs-keyword">int32_t</span> src_len32 = <span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">int32_t</span>&gt;(src_str.length());
+  <span class="hljs-keyword">int32_t</span> dest_len32 = <span class="hljs-number">0</span>;
+
+  <span class="hljs-keyword">bool</span> res = DoUTFConversion(src_str.data(), src_len32, dest, &amp;dest_len32);
+
+  dest_str-&gt;resize(dest_len32);
+  dest_str-&gt;shrink_to_fit();
+
+  <span class="hljs-keyword">return</span> res;
+}
+
+}  <span class="hljs-comment">// namespace</span>
+
+<span class="hljs-comment">// UTF16 &lt;-&gt; UTF8 --------------------------------------------------------------</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTF8ToUTF16</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* src, size_t src_len, <span class="hljs-built_in">std</span>::u16string* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(StringPiece(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">UTF8ToUTF16</span><span class="hljs-params">(StringPiece utf8)</span> </span>{
+  <span class="hljs-built_in">std</span>::u16string ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  UTF8ToUTF16(utf8.data(), utf8.size(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTF16ToUTF8</span><span class="hljs-params">(<span class="hljs-keyword">const</span> char16_t* src, size_t src_len, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(StringPiece16(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">UTF16ToUTF8</span><span class="hljs-params">(StringPiece16 utf16)</span> </span>{
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  UTF16ToUTF8(utf16.data(), utf16.length(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-comment">// UTF-16 &lt;-&gt; Wide -------------------------------------------------------------</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(WCHAR_T_IS_UTF16)</span>
+<span class="hljs-comment">// When wide == UTF-16 the conversions are a NOP.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">WideToUTF16</span><span class="hljs-params">(<span class="hljs-keyword">const</span> wchar_t* src, size_t src_len, <span class="hljs-built_in">std</span>::u16string* output)</span> </span>{
+  output-&gt;assign(src, src + src_len);
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">WideToUTF16</span><span class="hljs-params">(WStringPiece wide)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::u16string(wide.begin(), wide.end());
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTF16ToWide</span><span class="hljs-params">(<span class="hljs-keyword">const</span> char16_t* src, size_t src_len, <span class="hljs-built_in">std</span>::wstring* output)</span> </span>{
+  output-&gt;assign(src, src + src_len);
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">UTF16ToWide</span><span class="hljs-params">(StringPiece16 utf16)</span> </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::wstring(utf16.begin(), utf16.end());
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">elif</span> defined(WCHAR_T_IS_UTF32)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">WideToUTF16</span><span class="hljs-params">(<span class="hljs-keyword">const</span> wchar_t* src, size_t src_len, <span class="hljs-built_in">std</span>::u16string* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(base::WStringPiece(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">WideToUTF16</span><span class="hljs-params">(WStringPiece wide)</span> </span>{
+  <span class="hljs-built_in">std</span>::u16string ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  WideToUTF16(wide.data(), wide.length(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTF16ToWide</span><span class="hljs-params">(<span class="hljs-keyword">const</span> char16_t* src, size_t src_len, <span class="hljs-built_in">std</span>::wstring* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(StringPiece16(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">UTF16ToWide</span><span class="hljs-params">(StringPiece16 utf16)</span> </span>{
+  <span class="hljs-built_in">std</span>::wstring ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  UTF16ToWide(utf16.data(), utf16.length(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// defined(WCHAR_T_IS_UTF32)</span></span>
+
+<span class="hljs-comment">// UTF-8 &lt;-&gt; Wide --------------------------------------------------------------</span>
+
+<span class="hljs-comment">// UTF8ToWide is the same code, regardless of whether wide is 16 or 32 bits</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">UTF8ToWide</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* src, size_t src_len, <span class="hljs-built_in">std</span>::wstring* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(StringPiece(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">UTF8ToWide</span><span class="hljs-params">(StringPiece utf8)</span> </span>{
+  <span class="hljs-built_in">std</span>::wstring ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  UTF8ToWide(utf8.data(), utf8.length(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(WCHAR_T_IS_UTF16)</span>
+<span class="hljs-comment">// Easy case since we can use the &quot;utf&quot; versions we already wrote above.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">WideToUTF8</span><span class="hljs-params">(<span class="hljs-keyword">const</span> wchar_t* src, size_t src_len, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTF16ToUTF8(as_u16cstr(src), src_len, output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">WideToUTF8</span><span class="hljs-params">(WStringPiece wide)</span> </span>{
+  <span class="hljs-keyword">return</span> UTF16ToUTF8(StringPiece16(as_u16cstr(wide), wide.size()));
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">elif</span> defined(WCHAR_T_IS_UTF32)</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">WideToUTF8</span><span class="hljs-params">(<span class="hljs-keyword">const</span> wchar_t* src, size_t src_len, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> UTFConversion(WStringPiece(src, src_len), output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">WideToUTF8</span><span class="hljs-params">(WStringPiece wide)</span> </span>{
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> ret;
+  <span class="hljs-comment">// Ignore the success flag of this call, it will do the best it can for</span>
+  <span class="hljs-comment">// invalid input, which is what we want here.</span>
+  WideToUTF8(wide.data(), wide.length(), &amp;ret);
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// defined(WCHAR_T_IS_UTF32)</span></span>
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">ASCIIToUTF16</span><span class="hljs-params">(StringPiece ascii)</span> </span>{
+  DCHECK(IsStringASCII(ascii)) &lt;&lt; ascii;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::u16string(ascii.begin(), ascii.end());
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">UTF16ToASCII</span><span class="hljs-params">(StringPiece16 utf16)</span> </span>{
+  DCHECK(IsStringASCII(utf16)) &lt;&lt; UTF16ToUTF8(utf16);
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(utf16.begin(), utf16.end());
+}
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> defined(WCHAR_T_IS_UTF16)</span>
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">ASCIIToWide</span><span class="hljs-params">(StringPiece ascii)</span> </span>{
+  DCHECK(IsStringASCII(ascii)) &lt;&lt; ascii;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::wstring(ascii.begin(), ascii.end());
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">WideToASCII</span><span class="hljs-params">(WStringPiece wide)</span> </span>{
+  DCHECK(IsStringASCII(wide)) &lt;&lt; wide;
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>(wide.begin(), wide.end());
+}
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// defined(WCHAR_T_IS_UTF16)</span></span>
+
+}  <span class="hljs-comment">// namespace base</span>
+</code></pre>
+<h3 id="fuzzer"><a name="fuzzer" class="anchor-navigation-ex-anchor" href="#fuzzer"><i class="fa fa-link" aria-hidden="true"></i></a>fuzzer</h3>
+<pre><code class="lang-cpp">// Entry point for LibFuzzer.
+extern &quot;C&quot; int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
+  base::StringPiece string_piece_input(reinterpret_cast&lt;const char*&gt;(data),
+                                       size);
+
+  ignore_result(base::UTF8ToWide(string_piece_input));
+  base::UTF8ToWide(reinterpret_cast&lt;const char*&gt;(data), size,
+                   &amp;output_std_wstring);
+  ignore_result(base::UTF8ToUTF16(string_piece_input));
+  base::UTF8ToUTF16(reinterpret_cast&lt;const char*&gt;(data), size,
+                    &amp;output_string16);
+
+  // Test for char16_t.
+  if (size % 2 == 0) {
+    base::StringPiece16 string_piece_input16(
+        reinterpret_cast&lt;const char16_t*&gt;(data), size / 2);
+    ignore_result(base::UTF16ToWide(output_string16));
+    base::UTF16ToWide(reinterpret_cast&lt;const char16_t*&gt;(data), size / 2,
+                      &amp;output_std_wstring);
+    ignore_result(base::UTF16ToUTF8(string_piece_input16));
+    base::UTF16ToUTF8(reinterpret_cast&lt;const char16_t*&gt;(data), size / 2,
+                      &amp;output_std_string);
+  }
+
+  // Test for wchar_t.
+  size_t wchar_t_size = sizeof(wchar_t);
+  if (size % wchar_t_size == 0) {
+    ignore_result(base::WideToUTF8(output_std_wstring));
+    base::WideToUTF8(reinterpret_cast&lt;const wchar_t*&gt;(data),
+                     size / wchar_t_size, &amp;output_std_string);
+    ignore_result(base::WideToUTF16(output_std_wstring));
+    base::WideToUTF16(reinterpret_cast&lt;const wchar_t*&gt;(data),
+                      size / wchar_t_size, &amp;output_string16);
+  }
+
+  // Test for ASCII. This condition is needed to avoid hitting instant CHECK
+  // failures.
+  if (base::IsStringASCII(string_piece_input)) {
+    output_string16 = base::ASCIIToUTF16(string_piece_input);
+    base::StringPiece16 string_piece_input16(output_string16);
+    ignore_result(base::UTF16ToASCII(string_piece_input16));
+  }
+
+  return 0;
+}
+</code></pre>
+<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz',appKey: 'snSYunAWY2mBjfimkM7wlTk9',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="zi-fu-chuan-lei-xing-zhuan-huan.html" class="navigation navigation-prev " aria-label="Previous page: 字符串类型转换">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="kua-ping-tai-zi-fu-chu-li.html" class="navigation navigation-next " aria-label="Next page: 跨平台字符处理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"chrome中字符串编码转换实现方式","title":"字符串编码转换","level":"1.6.3.12.2","depth":4,"next":{"title":"跨平台字符处理","level":"1.6.3.12.3","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.md","articles":[]},"previous":{"title":"字符串类型转换","level":"1.6.3.12.1","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters-small","splitter","lightbox","anchor-navigation-ex","-lunr","-search","search-pro","pageview-count","code","-sharing","sharing-plus","donate","auto-scroll-table","accordion","valine"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/zsdp/chromeimage/raw/master/zhifubao.png","alipayText":"支付宝捐赠","button":"Donate","title":"","wechat":"https://gitee.com/zsdp/chromeimage/raw/master/weixin.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz","appKey":"snSYunAWY2mBjfimkM7wlTk9"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Chrome知识店铺","language":"zh-hans","gitbook":"*","description":"分享Chrome相关知识"},"file":{"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.md","mtime":"2021-05-08T00:29:24.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-08T00:30:12.656Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

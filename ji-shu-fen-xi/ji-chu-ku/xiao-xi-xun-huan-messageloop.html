@@ -1,0 +1,875 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>消息循环（message_loop） · Chrome知识店铺</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="nei-cun-memory.html" />
+    
+    
+    <link rel="prev" href="du-liang-metrics.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    chrome知识店铺
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../geng-xin-ji-hua.html">
+            
+                <a href="../../geng-xin-ji-hua.html">
+            
+                    
+                    更新计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../cha-jian-fen-xiang.html">
+            
+                <a href="../../cha-jian-fen-xiang.html">
+            
+                    
+                    插件分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../xin-shou-jiao-cheng.html">
+            
+                <a href="../../xin-shou-jiao-cheng.html">
+            
+                    
+                    新手教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../ji-shu-dong-tai.html">
+            
+                <a href="../../ji-shu-dong-tai.html">
+            
+                    
+                    技术动态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    技术分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../wang-luo-zhan/">
+            
+                <a href="../wang-luo-zhan/">
+            
+                    
+                    网络栈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../wang-luo-zhan/dns-jie-xi.html">
+            
+                <a href="../wang-luo-zhan/dns-jie-xi.html">
+            
+                    
+                    DNS解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../nei-he/">
+            
+                <a href="../nei-he/">
+            
+                    
+                    内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../nei-he/blink.html">
+            
+                <a href="../nei-he/blink.html">
+            
+                    
+                    Blink
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    基础库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="win.html">
+            
+                <a href="win.html">
+            
+                    
+                    win
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="tong-yong-util.html">
+            
+                <a href="tong-yong-util.html">
+            
+                    
+                    通用（util）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="shi-jian-zhui-zong-traceevent.html">
+            
+                <a href="shi-jian-zhui-zong-traceevent.html">
+            
+                    
+                    事件追踪（trace_event）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" data-path="ding-shi-qi-timer.html">
+            
+                <a href="ding-shi-qi-timer.html">
+            
+                    
+                    定时器（timer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="shi-jian-time.html">
+            
+                <a href="shi-jian-time.html">
+            
+                    
+                    时间（time）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.6" data-path="xian-cheng-threading.html">
+            
+                <a href="xian-cheng-threading.html">
+            
+                    
+                    线程（threading）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.7" data-path="di-san-fang-ku-thirdparty.html">
+            
+                <a href="di-san-fang-ku-thirdparty.html">
+            
+                    
+                    第三方库（third_party）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.8" data-path="ce-shi-test.html">
+            
+                <a href="ce-shi-test.html">
+            
+                    
+                    测试（test）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.9" data-path="ren-wu-task.html">
+            
+                <a href="ren-wu-task.html">
+            
+                    
+                    任务（task）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.10" data-path="xi-tong-system.html">
+            
+                <a href="xi-tong-system.html">
+            
+                    
+                    系统（system）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.11" data-path="tong-bu-synchronization.html">
+            
+                <a href="tong-bu-synchronization.html">
+            
+                    
+                    同步（synchronization）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12" data-path="zi-fu-chuan-strings/">
+            
+                <a href="zi-fu-chuan-strings/">
+            
+                    
+                    字符串（strings）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.12.1" data-path="zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                    
+                    字符串类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12.2" data-path="zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                    
+                    字符串编码转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12.3" data-path="zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.html">
+            
+                <a href="zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.html">
+            
+                    
+                    跨平台字符处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.13" data-path="fen-xi-qi-profiler.html">
+            
+                <a href="fen-xi-qi-profiler.html">
+            
+                    
+                    分析器（profiler）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.14" data-path="jin-cheng-process.html">
+            
+                <a href="jin-cheng-process.html">
+            
+                    
+                    进程（process）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.15" data-path="dian-yuan-jian-kong-powermonitor.html">
+            
+                <a href="dian-yuan-jian-kong-powermonitor.html">
+            
+                    
+                    电源监控(power_monitor)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.16" data-path="posix.html">
+            
+                <a href="posix.html">
+            
+                    
+                    posix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.17" data-path="shu-zi-numerics.html">
+            
+                <a href="shu-zi-numerics.html">
+            
+                    
+                    数字（numerics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.18" data-path="du-liang-metrics.html">
+            
+                <a href="du-liang-metrics.html">
+            
+                    
+                    度量（metrics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6.3.19" data-path="xiao-xi-xun-huan-messageloop.html">
+            
+                <a href="xiao-xi-xun-huan-messageloop.html">
+            
+                    
+                    消息循环（message_loop）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.20" data-path="nei-cun-memory.html">
+            
+                <a href="nei-cun-memory.html">
+            
+                    
+                    内存（memory）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.21" data-path="mac.html">
+            
+                <a href="mac.html">
+            
+                    
+                    mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.22" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.23" data-path="guo-ji-hua-i18n.html">
+            
+                <a href="guo-ji-hua-i18n.html">
+            
+                    
+                    国际化（i18n）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.24" data-path="ha-xi-hash.html">
+            
+                <a href="ha-xi-hash.html">
+            
+                    
+                    哈希（hash）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.25" data-path="fuchsia.html">
+            
+                <a href="fuchsia.html">
+            
+                    
+                    fuchsia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.26" data-path="wen-jian-files.html">
+            
+                <a href="wen-jian-files.html">
+            
+                    
+                    文件（files）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.27" data-path="tiao-shi-qi-debug.html">
+            
+                <a href="tiao-shi-qi-debug.html">
+            
+                    
+                    调试器（debug）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.28" data-path="rong-qi-containers.html">
+            
+                <a href="rong-qi-containers.html">
+            
+                    
+                    容器（containers）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.29" data-path="fen-pei-qi-allocator.html">
+            
+                <a href="fen-pei-qi-allocator.html">
+            
+                    
+                    分配器（allocator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >消息循环（message_loop）</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;messageloop&#xFF09;"><b></b>&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;message_loop&#xFF09;</a></li></ul></div><h1 id="&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;messageloop&#xFF09;"><a name="&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;messageloop&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;messageloop&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6D88;&#x606F;&#x5FAA;&#x73AF;&#xFF08;message_loop&#xFF09;</h1>
+<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz',appKey: 'snSYunAWY2mBjfimkM7wlTk9',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="du-liang-metrics.html" class="navigation navigation-prev " aria-label="Previous page: 度量（metrics）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="nei-cun-memory.html" class="navigation navigation-next " aria-label="Next page: 内存（memory）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"消息循环（message_loop）","level":"1.6.3.19","depth":3,"next":{"title":"内存（memory）","level":"1.6.3.20","depth":3,"path":"ji-shu-fen-xi/ji-chu-ku/nei-cun-memory.md","ref":"ji-shu-fen-xi/ji-chu-ku/nei-cun-memory.md","articles":[]},"previous":{"title":"度量（metrics）","level":"1.6.3.18","depth":3,"path":"ji-shu-fen-xi/ji-chu-ku/du-liang-metrics.md","ref":"ji-shu-fen-xi/ji-chu-ku/du-liang-metrics.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters-small","splitter","lightbox","anchor-navigation-ex","-lunr","-search","search-pro","pageview-count","code","-sharing","sharing-plus","donate","auto-scroll-table","accordion","valine"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/zsdp/chromeimage/raw/master/zhifubao.png","alipayText":"支付宝捐赠","button":"Donate","title":"","wechat":"https://gitee.com/zsdp/chromeimage/raw/master/weixin.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz","appKey":"snSYunAWY2mBjfimkM7wlTk9"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Chrome知识店铺","language":"zh-hans","gitbook":"*","description":"分享Chrome相关知识"},"file":{"path":"ji-shu-fen-xi/ji-chu-ku/xiao-xi-xun-huan-messageloop.md","mtime":"2021-05-08T00:29:24.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-08T00:30:12.656Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

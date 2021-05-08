@@ -1,0 +1,1656 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>字符串类型转换 · Chrome知识店铺</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="chrome中字符串类型转换">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-pageview-count/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-auto-scroll-table/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-accordion/accordion.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="zi-fu-chuan-bian-ma-zhuan-huan.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    chrome知识店铺
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../../geng-xin-ji-hua.html">
+            
+                <a href="../../../geng-xin-ji-hua.html">
+            
+                    
+                    更新计划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../../cha-jian-fen-xiang.html">
+            
+                <a href="../../../cha-jian-fen-xiang.html">
+            
+                    
+                    插件分享
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../../xin-shou-jiao-cheng.html">
+            
+                <a href="../../../xin-shou-jiao-cheng.html">
+            
+                    
+                    新手教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../../ji-shu-dong-tai.html">
+            
+                <a href="../../../ji-shu-dong-tai.html">
+            
+                    
+                    技术动态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    技术分析
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../wang-luo-zhan/">
+            
+                <a href="../../wang-luo-zhan/">
+            
+                    
+                    网络栈
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../wang-luo-zhan/dns-jie-xi.html">
+            
+                <a href="../../wang-luo-zhan/dns-jie-xi.html">
+            
+                    
+                    DNS解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../nei-he/">
+            
+                <a href="../../nei-he/">
+            
+                    
+                    内核
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.2.1" data-path="../../nei-he/blink.html">
+            
+                <a href="../../nei-he/blink.html">
+            
+                    
+                    Blink
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    基础库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.3.1" data-path="../win.html">
+            
+                <a href="../win.html">
+            
+                    
+                    win
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.2" data-path="../tong-yong-util.html">
+            
+                <a href="../tong-yong-util.html">
+            
+                    
+                    通用（util）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.3" data-path="../shi-jian-zhui-zong-traceevent.html">
+            
+                <a href="../shi-jian-zhui-zong-traceevent.html">
+            
+                    
+                    事件追踪（trace_event）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.4" data-path="../ding-shi-qi-timer.html">
+            
+                <a href="../ding-shi-qi-timer.html">
+            
+                    
+                    定时器（timer）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.5" data-path="../shi-jian-time.html">
+            
+                <a href="../shi-jian-time.html">
+            
+                    
+                    时间（time）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.6" data-path="../xian-cheng-threading.html">
+            
+                <a href="../xian-cheng-threading.html">
+            
+                    
+                    线程（threading）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.7" data-path="../di-san-fang-ku-thirdparty.html">
+            
+                <a href="../di-san-fang-ku-thirdparty.html">
+            
+                    
+                    第三方库（third_party）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.8" data-path="../ce-shi-test.html">
+            
+                <a href="../ce-shi-test.html">
+            
+                    
+                    测试（test）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.9" data-path="../ren-wu-task.html">
+            
+                <a href="../ren-wu-task.html">
+            
+                    
+                    任务（task）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.10" data-path="../xi-tong-system.html">
+            
+                <a href="../xi-tong-system.html">
+            
+                    
+                    系统（system）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.11" data-path="../tong-bu-synchronization.html">
+            
+                <a href="../tong-bu-synchronization.html">
+            
+                    
+                    同步（synchronization）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    字符串（strings）
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.6.3.12.1" data-path="zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-lei-xing-zhuan-huan.html">
+            
+                    
+                    字符串类型转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12.2" data-path="zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                <a href="zi-fu-chuan-bian-ma-zhuan-huan.html">
+            
+                    
+                    字符串编码转换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.12.3" data-path="kua-ping-tai-zi-fu-chu-li.html">
+            
+                <a href="kua-ping-tai-zi-fu-chu-li.html">
+            
+                    
+                    跨平台字符处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.13" data-path="../fen-xi-qi-profiler.html">
+            
+                <a href="../fen-xi-qi-profiler.html">
+            
+                    
+                    分析器（profiler）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.14" data-path="../jin-cheng-process.html">
+            
+                <a href="../jin-cheng-process.html">
+            
+                    
+                    进程（process）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.15" data-path="../dian-yuan-jian-kong-powermonitor.html">
+            
+                <a href="../dian-yuan-jian-kong-powermonitor.html">
+            
+                    
+                    电源监控(power_monitor)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.16" data-path="../posix.html">
+            
+                <a href="../posix.html">
+            
+                    
+                    posix
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.17" data-path="../shu-zi-numerics.html">
+            
+                <a href="../shu-zi-numerics.html">
+            
+                    
+                    数字（numerics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.18" data-path="../du-liang-metrics.html">
+            
+                <a href="../du-liang-metrics.html">
+            
+                    
+                    度量（metrics）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.19" data-path="../xiao-xi-xun-huan-messageloop.html">
+            
+                <a href="../xiao-xi-xun-huan-messageloop.html">
+            
+                    
+                    消息循环（message_loop）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.20" data-path="../nei-cun-memory.html">
+            
+                <a href="../nei-cun-memory.html">
+            
+                    
+                    内存（memory）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.21" data-path="../mac.html">
+            
+                <a href="../mac.html">
+            
+                    
+                    mac
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.22" data-path="../json.html">
+            
+                <a href="../json.html">
+            
+                    
+                    json
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.23" data-path="../guo-ji-hua-i18n.html">
+            
+                <a href="../guo-ji-hua-i18n.html">
+            
+                    
+                    国际化（i18n）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.24" data-path="../ha-xi-hash.html">
+            
+                <a href="../ha-xi-hash.html">
+            
+                    
+                    哈希（hash）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.25" data-path="../fuchsia.html">
+            
+                <a href="../fuchsia.html">
+            
+                    
+                    fuchsia
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.26" data-path="../wen-jian-files.html">
+            
+                <a href="../wen-jian-files.html">
+            
+                    
+                    文件（files）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.27" data-path="../tiao-shi-qi-debug.html">
+            
+                <a href="../tiao-shi-qi-debug.html">
+            
+                    
+                    调试器（debug）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.28" data-path="../rong-qi-containers.html">
+            
+                <a href="../rong-qi-containers.html">
+            
+                    
+                    容器（containers）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3.29" data-path="../fen-pei-qi-allocator.html">
+            
+                <a href="../fen-pei-qi-allocator.html">
+            
+                    
+                    分配器（allocator）
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >字符串类型转换</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><b></b>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</a></li><ul><li><span class="title-icon "></span><a href="#&#x76F8;&#x5173;&#x6587;&#x4EF6;"><b></b>&#x76F8;&#x5173;&#x6587;&#x4EF6;</a></li><li><span class="title-icon "></span><a href="#&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><b></b>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;</a></li><ul><li><span class="title-icon "></span><a href="#&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;"><b></b>&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;</a></li><li><span class="title-icon "></span><a href="#&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;"><b></b>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;</a></li><li><span class="title-icon "></span><a href="#&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;"><b></b>&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;</a></li><li><span class="title-icon "></span><a href="#windows"><b></b>windows</a></li></ul><li><span class="title-icon "></span><a href="#&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><b></b>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</a></li><ul><li><span class="title-icon "></span><a href="#internal"><b></b>internal</a></li><li><span class="title-icon "></span><a href="#fuzzer"><b></b>fuzzer</a></li><li><span class="title-icon "></span><a href="#windows_1"><b></b>windows</a></li></ul></ul></ul></div><h1 id="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;</h1>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x4E3B;&#x8981;&#x8BBE;&#x8BA1;&#x6570;&#x5B57;&#x4E8E;&#x5B57;&#x7B26;&#x8F6C;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x548C;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;</p>
+<h2 id="&#x76F8;&#x5173;&#x6587;&#x4EF6;"><a name="&#x76F8;&#x5173;&#x6587;&#x4EF6;" class="anchor-navigation-ex-anchor" href="#&#x76F8;&#x5173;&#x6587;&#x4EF6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x76F8;&#x5173;&#x6587;&#x4EF6;</h2>
+<ul>
+<li>base/strings/string_number_conversions.h  // std::string&#x3001;std::u16string&#x4E0E;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x5B9A;&#x4E49;</li>
+<li>base/strings/string_number_conversions.cc  // std::string&#x3001;std::u16string&#x4E0E;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+<li>base/strings/string_number_conversions_fuzzer.cc  // &#x6570;&#x5B57;&#x4E0E;&#x5B57;&#x7B26;&#x8F6C;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+<li>base/strings/string_number_conversions_internal.h  // &#x6570;&#x5B57;&#x4E0E;&#x5B57;&#x7B26;&#x8F6C;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+<li>base/strings/string_number_conversions_win.h  // std::wstring&#x4E0E;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x5B9A;&#x4E49;</li>
+<li>base/strings/string_number_conversions_win.cc  // std::wstring&#x4E0E;&#x6570;&#x5B57;&#x4E4B;&#x95F4;&#x7684;&#x8F6C;&#x6362;&#x5B9E;&#x73B0;</li>
+</ul>
+<h2 id="&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><a name="&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x5B9A;&#x4E49;</h2>
+<h3 id="&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;"><a name="&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;" class="anchor-navigation-ex-anchor" href="#&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x5B57;&#x8F6C;&#x6362;&#x5B57;&#x7B26;&#x4E32;</h3>
+<p>&#x4F7F;&#x7528;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x4F7F;&#x5F00;&#x53D1;&#x4E0D;&#x9700;&#x8981;&#x8BB0;&#x5FC6;&#x5927;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x53EA;&#x9700;&#x5173;&#x5FC3;&#x9700;&#x8981;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x7C7B;&#x578B;string&#x6216;u16string&#x3002;</p>
+<h3 id="&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;"><a name="&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;" class="anchor-navigation-ex-anchor" href="#&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;</h3>
+<p>&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;&#x6709;&#x53EF;&#x80FD;&#x5931;&#x8D25;&#xFF0C;&#x9700;&#x8981;&#x5224;&#x65AD;StringTo*&#x8FD4;&#x56DE;&#x662F;&#x5426;&#x4E3A;true&#x3002;</p>
+<h3 id="&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;"><a name="&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;" class="anchor-navigation-ex-anchor" href="#&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;</h3>
+<p>&#x5341;&#x516D;&#x8FDB;&#x5236;&#x8868;&#x793A;&#x6CD5;&#x5728;&#x7F16;&#x7A0B;&#x4E2D;&#x975E;&#x5E38;&#x5E38;&#x89C1;&#xFF0C;&#x5C06;&#x5341;&#x516D;&#x8FDB;&#x5236;&#x7F16;&#x7801;&#x5B57;&#x7B26;&#x8F6C;&#x6362;&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x662F;&#x5BF9;&#x201C;&#x5B57;&#x7B26;&#x4E32;&#x8F6C;&#x6362;&#x6570;&#x5B57;&#x201D;&#x7684;&#x4E00;&#x4E2A;&#x6269;&#x5145;&#x3002;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// base/strings/string_number_conversions.h</span>
+<span class="hljs-keyword">namespace</span> base {
+
+<span class="hljs-comment">// Number -&gt; string conversions ------------------------------------------------</span>
+
+<span class="hljs-comment">// Ignores locale! see warning above.</span>
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span></span>;
+
+<span class="hljs-comment">// String -&gt; number conversions ------------------------------------------------</span>
+
+<span class="hljs-comment">// Perform a best-effort conversion of the input string to a numeric type,</span>
+<span class="hljs-comment">// setting |*output| to the result of the conversion.  Returns true for</span>
+<span class="hljs-comment">// &quot;perfect&quot; conversions; returns false in the following cases:</span>
+<span class="hljs-comment">//  - Overflow. |*output| will be set to the maximum value supported</span>
+<span class="hljs-comment">//    by the data type.</span>
+<span class="hljs-comment">//  - Underflow. |*output| will be set to the minimum value supported</span>
+<span class="hljs-comment">//    by the data type.</span>
+<span class="hljs-comment">//  - Trailing characters in the string after parsing the number.  |*output|</span>
+<span class="hljs-comment">//    will be set to the value of the number that was parsed.</span>
+<span class="hljs-comment">//  - Leading whitespace in the string before parsing the number. |*output| will</span>
+<span class="hljs-comment">//    be set to the value of the number that was parsed.</span>
+<span class="hljs-comment">//  - No characters parseable as a number at the beginning of the string.</span>
+<span class="hljs-comment">//    |*output| will be set to 0.</span>
+<span class="hljs-comment">//  - Empty string.  |*output| will be set to 0.</span>
+<span class="hljs-comment">// WARNING: Will write to |output| even when returning false.</span>
+<span class="hljs-comment">//          Read the comments above carefully.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">int</span>* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">int</span>* output)</span></span>;
+
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">unsigned</span>* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">unsigned</span>* output)</span></span>;
+
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(StringPiece input, int64_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(StringPiece16 input, int64_t* output)</span></span>;
+
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(StringPiece input, uint64_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(StringPiece16 input, uint64_t* output)</span></span>;
+
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(StringPiece input, size_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(StringPiece16 input, size_t* output)</span></span>;
+
+<span class="hljs-comment">// For floating-point conversions, only conversions of input strings in decimal</span>
+<span class="hljs-comment">// form are defined to work.  Behavior with strings representing floating-point</span>
+<span class="hljs-comment">// numbers in hexadecimal, and strings representing non-finite values (such as</span>
+<span class="hljs-comment">// NaN and inf) is undefined.  Otherwise, these behave the same as the integral</span>
+<span class="hljs-comment">// variants.  This expects the input string to NOT be specific to the locale.</span>
+<span class="hljs-comment">// If your input is locale specific, use ICU to read the number.</span>
+<span class="hljs-comment">// WARNING: Will write to |output| even when returning false.</span>
+<span class="hljs-comment">//          Read the comments here and above StringToInt() carefully.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">double</span>* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">double</span>* output)</span></span>;
+
+<span class="hljs-comment">// Hex encoding ----------------------------------------------------------------</span>
+
+<span class="hljs-comment">// Returns a hex string representation of a binary buffer. The returned hex</span>
+<span class="hljs-comment">// string will be in upper case. This function does not check if |size| is</span>
+<span class="hljs-comment">// within reasonable limits since it&apos;s written with trusted data in mind.  If</span>
+<span class="hljs-comment">// you suspect that the data you want to format might be large, the absolute</span>
+<span class="hljs-comment">// max size for |size| should be is</span>
+<span class="hljs-comment">//   std::numeric_limits&lt;size_t&gt;::max() / 2</span>
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">HexEncode</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span>* bytes, size_t size)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">HexEncode</span><span class="hljs-params">(base::span&lt;<span class="hljs-keyword">const</span> uint8_t&gt; bytes)</span></span>;
+
+<span class="hljs-comment">// Best effort conversion, see StringToInt above for restrictions.</span>
+<span class="hljs-comment">// Will only successful parse hex values that will fit into |output|, i.e.</span>
+<span class="hljs-comment">// -0x80000000 &lt; |input| &lt; 0x7FFFFFFF.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToInt</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">int</span>* output)</span></span>;
+
+<span class="hljs-comment">// Best effort conversion, see StringToInt above for restrictions.</span>
+<span class="hljs-comment">// Will only successful parse hex values that will fit into |output|, i.e.</span>
+<span class="hljs-comment">// 0x00000000 &lt; |input| &lt; 0xFFFFFFFF.</span>
+<span class="hljs-comment">// The string is not required to start with 0x.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToUInt</span><span class="hljs-params">(StringPiece input, uint32_t* output)</span></span>;
+
+<span class="hljs-comment">// Best effort conversion, see StringToInt above for restrictions.</span>
+<span class="hljs-comment">// Will only successful parse hex values that will fit into |output|, i.e.</span>
+<span class="hljs-comment">// -0x8000000000000000 &lt; |input| &lt; 0x7FFFFFFFFFFFFFFF.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToInt64</span><span class="hljs-params">(StringPiece input, int64_t* output)</span></span>;
+
+<span class="hljs-comment">// Best effort conversion, see StringToInt above for restrictions.</span>
+<span class="hljs-comment">// Will only successful parse hex values that will fit into |output|, i.e.</span>
+<span class="hljs-comment">// 0x0000000000000000 &lt; |input| &lt; 0xFFFFFFFFFFFFFFFF.</span>
+<span class="hljs-comment">// The string is not required to start with 0x.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToUInt64</span><span class="hljs-params">(StringPiece input, uint64_t* output)</span></span>;
+
+<span class="hljs-comment">// Similar to the previous functions, except that output is a vector of bytes.</span>
+<span class="hljs-comment">// |*output| will contain as many bytes as were successfully parsed prior to the</span>
+<span class="hljs-comment">// error.  There is no overflow, but input.size() must be evenly divisible by 2.</span>
+<span class="hljs-comment">// Leading 0x or +/- are not allowed.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToBytes</span><span class="hljs-params">(StringPiece input,
+                                  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;uint8_t&gt;* output)</span></span>;
+
+<span class="hljs-comment">// Same as HexStringToBytes, but for an std::string.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToString</span><span class="hljs-params">(StringPiece input, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>* output)</span></span>;
+
+<span class="hljs-comment">// Decodes the hex string |input| into a presized |output|. The output buffer</span>
+<span class="hljs-comment">// must be sized exactly to |input.size() / 2| or decoding will fail and no</span>
+<span class="hljs-comment">// bytes will be written to |output|. Decoding an empty input is also</span>
+<span class="hljs-comment">// considered a failure. When decoding fails due to encountering invalid input</span>
+<span class="hljs-comment">// characters, |output| will have been filled with the decoded bytes up until</span>
+<span class="hljs-comment">// the failure.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToSpan</span><span class="hljs-params">(StringPiece input, base::span&lt;uint8_t&gt; output)</span></span>;
+
+}  <span class="hljs-comment">// namespace base</span>
+</code></pre>
+<h3 id="windows"><a name="windows" class="anchor-navigation-ex-anchor" href="#windows"><i class="fa fa-link" aria-hidden="true"></i></a>windows</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// base/strings/string_number_conversions_win.h</span>
+<span class="hljs-keyword">namespace</span> base {
+
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span></span>;
+BASE_EXPORT <span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span></span>;
+
+<span class="hljs-comment">// The following section contains overloads of the cross-platform APIs for</span>
+<span class="hljs-comment">// std::wstring and base::WStringPiece.</span>
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">int</span>* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">unsigned</span>* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(WStringPiece input, int64_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(WStringPiece input, uint64_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(WStringPiece input, size_t* output)</span></span>;
+<span class="hljs-function">BASE_EXPORT <span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">double</span>* output)</span></span>;
+
+}  <span class="hljs-comment">// namespace base</span>
+</code></pre>
+<h2 id="&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><a name="&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;</h2>
+<pre><code class="lang-cpp"><span class="hljs-comment">// base/strings/string_number_conversions.cc</span>
+<span class="hljs-keyword">namespace</span> base {
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">NumberToString</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::DoubleToStringT&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">u16string <span class="hljs-title">NumberToString16</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::DoubleToStringT&lt;<span class="hljs-built_in">std</span>::u16string&gt;(value);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">int</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">int</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">unsigned</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">unsigned</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(StringPiece input, int64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(StringPiece16 input, int64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(StringPiece input, uint64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(StringPiece16 input, uint64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(StringPiece input, size_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(StringPiece16 input, size_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">double</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToDoubleImpl(input, input.data(), *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(StringPiece16 input, <span class="hljs-keyword">double</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToDoubleImpl(
+      input, <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span>*&gt;(input.data()), *output);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">HexEncode</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">void</span>* bytes, size_t size)</span> </span>{
+  <span class="hljs-keyword">static</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> kHexChars[] = <span class="hljs-string">&quot;0123456789ABCDEF&quot;</span>;
+
+  <span class="hljs-comment">// Each input byte creates two output hex characters.</span>
+  <span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">ret</span><span class="hljs-params">(size * <span class="hljs-number">2</span>, <span class="hljs-string">&apos;\0&apos;</span>)</span></span>;
+
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">size_t</span> i = <span class="hljs-number">0</span>; i &lt; size; ++i) {
+    <span class="hljs-keyword">char</span> b = <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>*&gt;(bytes)[i];
+    ret[(i * <span class="hljs-number">2</span>)] = kHexChars[(b &gt;&gt; <span class="hljs-number">4</span>) &amp; <span class="hljs-number">0xf</span>];
+    ret[(i * <span class="hljs-number">2</span>) + <span class="hljs-number">1</span>] = kHexChars[b &amp; <span class="hljs-number">0xf</span>];
+  }
+  <span class="hljs-keyword">return</span> ret;
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function"><span class="hljs-built_in">string</span> <span class="hljs-title">HexEncode</span><span class="hljs-params">(base::span&lt;<span class="hljs-keyword">const</span> uint8_t&gt; bytes)</span> </span>{
+  <span class="hljs-keyword">return</span> HexEncode(bytes.data(), bytes.size());
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToInt</span><span class="hljs-params">(StringPiece input, <span class="hljs-keyword">int</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::HexStringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToUInt</span><span class="hljs-params">(StringPiece input, uint32_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::HexStringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToInt64</span><span class="hljs-params">(StringPiece input, int64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::HexStringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToUInt64</span><span class="hljs-params">(StringPiece input, uint64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::HexStringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToBytes</span><span class="hljs-params">(StringPiece input, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;uint8_t&gt;* output)</span> </span>{
+  DCHECK(output-&gt;empty());
+  <span class="hljs-keyword">return</span> internal::HexStringToByteContainer(input, <span class="hljs-built_in">std</span>::back_inserter(*output));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToString</span><span class="hljs-params">(StringPiece input, <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>* output)</span> </span>{
+  DCHECK(output-&gt;empty());
+  <span class="hljs-keyword">return</span> internal::HexStringToByteContainer(input, <span class="hljs-built_in">std</span>::back_inserter(*output));
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">HexStringToSpan</span><span class="hljs-params">(StringPiece input, base::span&lt;uint8_t&gt; output)</span> </span>{
+  <span class="hljs-keyword">if</span> (input.size() / <span class="hljs-number">2</span> != output.size())
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+  <span class="hljs-keyword">return</span> internal::HexStringToByteContainer(input, output.begin());
+}
+
+}  <span class="hljs-comment">// namespace base</span>
+</code></pre>
+<h3 id="internal"><a name="internal" class="anchor-navigation-ex-anchor" href="#internal"><i class="fa fa-link" aria-hidden="true"></i></a>internal</h3>
+<pre><code class="lang-cpp">// base/strings/string_number_conversions_internal.h
+namespace base {
+
+namespace internal {
+
+template &lt;typename STR, typename INT&gt;
+static STR IntToStringT(INT value) {
+  // log10(2) ~= 0.3 bytes needed per bit or per byte log10(2**8) ~= 2.4.
+  // So round up to allocate 3 output characters per byte, plus 1 for &apos;-&apos;.
+  const size_t kOutputBufSize =
+      3 * sizeof(INT) + std::numeric_limits&lt;INT&gt;::is_signed;
+
+  // Create the string in a temporary buffer, write it back to front, and
+  // then return the substr of what we ended up using.
+  using CHR = typename STR::value_type;
+  CHR outbuf[kOutputBufSize];
+
+  // The ValueOrDie call below can never fail, because UnsignedAbs is valid
+  // for all valid inputs.
+  std::make_unsigned_t&lt;INT&gt; res =
+      CheckedNumeric&lt;INT&gt;(value).UnsignedAbs().ValueOrDie();
+
+  CHR* end = outbuf + kOutputBufSize;
+  CHR* i = end;
+  do {
+    --i;
+    DCHECK(i != outbuf);
+    *i = static_cast&lt;CHR&gt;((res % 10) + &apos;0&apos;);
+    res /= 10;
+  } while (res != 0);
+  if (IsValueNegative(value)) {
+    --i;
+    DCHECK(i != outbuf);
+    *i = static_cast&lt;CHR&gt;(&apos;-&apos;);
+  }
+  return STR(i, end);
+}
+
+// Utility to convert a character to a digit in a given base
+template &lt;int BASE, typename CHAR&gt;
+Optional&lt;uint8_t&gt; CharToDigit(CHAR c) {
+  static_assert(1 &lt;= BASE &amp;&amp; BASE &lt;= 36, &quot;BASE needs to be in [1, 36]&quot;);
+  if (c &gt;= &apos;0&apos; &amp;&amp; c &lt; &apos;0&apos; + std::min(BASE, 10))
+    return c - &apos;0&apos;;
+
+  if (c &gt;= &apos;a&apos; &amp;&amp; c &lt; &apos;a&apos; + BASE - 10)
+    return c - &apos;a&apos; + 10;
+
+  if (c &gt;= &apos;A&apos; &amp;&amp; c &lt; &apos;A&apos; + BASE - 10)
+    return c - &apos;A&apos; + 10;
+
+  return base::nullopt;
+}
+
+// There is an IsUnicodeWhitespace for wchars defined in string_util.h, but it
+// is locale independent, whereas the functions we are replacing were
+// locale-dependent. TBD what is desired, but for the moment let&apos;s not
+// introduce a change in behaviour.
+template &lt;typename CHAR&gt;
+class WhitespaceHelper {};
+
+template &lt;&gt;
+class WhitespaceHelper&lt;char&gt; {
+ public:
+  static bool Invoke(char c) {
+    return 0 != isspace(static_cast&lt;unsigned char&gt;(c));
+  }
+};
+
+template &lt;&gt;
+class WhitespaceHelper&lt;char16_t&gt; {
+ public:
+  static bool Invoke(char16_t c) { return 0 != iswspace(c); }
+};
+
+template &lt;typename CHAR&gt;
+bool LocalIsWhitespace(CHAR c) {
+  return WhitespaceHelper&lt;CHAR&gt;::Invoke(c);
+}
+
+template &lt;typename Number, int kBase&gt;
+class StringToNumberParser {
+ public:
+  struct Result {
+    Number value = 0;
+    bool valid = false;
+  };
+
+  static constexpr Number kMin = std::numeric_limits&lt;Number&gt;::min();
+  static constexpr Number kMax = std::numeric_limits&lt;Number&gt;::max();
+
+  // Sign provides:
+  //  - a static function, CheckBounds, that determines whether the next digit
+  //    causes an overflow/underflow
+  //  - a static function, Increment, that appends the next digit appropriately
+  //    according to the sign of the number being parsed.
+  template &lt;typename Sign&gt;
+  class Base {
+   public:
+    template &lt;typename Iter&gt;
+    static Result Invoke(Iter begin, Iter end) {
+      Number value = 0;
+
+      if (begin == end) {
+        return {value, false};
+      }
+
+      // Note: no performance difference was found when using template
+      // specialization to remove this check in bases other than 16
+      if (kBase == 16 &amp;&amp; end - begin &gt; 2 &amp;&amp; *begin == &apos;0&apos; &amp;&amp;
+          (*(begin + 1) == &apos;x&apos; || *(begin + 1) == &apos;X&apos;)) {
+        begin += 2;
+      }
+
+      for (Iter current = begin; current != end; ++current) {
+        Optional&lt;uint8_t&gt; new_digit = CharToDigit&lt;kBase&gt;(*current);
+
+        if (!new_digit) {
+          return {value, false};
+        }
+
+        if (current != begin) {
+          Result result = Sign::CheckBounds(value, *new_digit);
+          if (!result.valid)
+            return result;
+
+          value *= kBase;
+        }
+
+        value = Sign::Increment(value, *new_digit);
+      }
+      return {value, true};
+    }
+  };
+
+  class Positive : public Base&lt;Positive&gt; {
+   public:
+    static Result CheckBounds(Number value, uint8_t new_digit) {
+      if (value &gt; static_cast&lt;Number&gt;(kMax / kBase) ||
+          (value == static_cast&lt;Number&gt;(kMax / kBase) &amp;&amp;
+           new_digit &gt; kMax % kBase)) {
+        return {kMax, false};
+      }
+      return {value, true};
+    }
+    static Number Increment(Number lhs, uint8_t rhs) { return lhs + rhs; }
+  };
+
+  class Negative : public Base&lt;Negative&gt; {
+   public:
+    static Result CheckBounds(Number value, uint8_t new_digit) {
+      if (value &lt; kMin / kBase ||
+          (value == kMin / kBase &amp;&amp; new_digit &gt; 0 - kMin % kBase)) {
+        return {kMin, false};
+      }
+      return {value, true};
+    }
+    static Number Increment(Number lhs, uint8_t rhs) { return lhs - rhs; }
+  };
+};
+
+template &lt;typename Number, int kBase, typename CharT&gt;
+auto StringToNumber(BasicStringPiece&lt;CharT&gt; input) {
+  using Parser = StringToNumberParser&lt;Number, kBase&gt;;
+  using Result = typename Parser::Result;
+
+  bool has_leading_whitespace = false;
+  auto begin = input.begin();
+  auto end = input.end();
+
+  while (begin != end &amp;&amp; LocalIsWhitespace(*begin)) {
+    has_leading_whitespace = true;
+    ++begin;
+  }
+
+  if (begin != end &amp;&amp; *begin == &apos;-&apos;) {
+    if (!std::numeric_limits&lt;Number&gt;::is_signed) {
+      return Result{0, false};
+    }
+
+    Result result = Parser::Negative::Invoke(begin + 1, end);
+    result.valid &amp;= !has_leading_whitespace;
+    return result;
+  }
+
+  if (begin != end &amp;&amp; *begin == &apos;+&apos;) {
+    ++begin;
+  }
+
+  Result result = Parser::Positive::Invoke(begin, end);
+  result.valid &amp;= !has_leading_whitespace;
+  return result;
+}
+
+template &lt;typename CharT, typename VALUE&gt;
+bool StringToIntImpl(BasicStringPiece&lt;CharT&gt; input, VALUE&amp; output) {
+  auto result = StringToNumber&lt;VALUE, 10&gt;(input);
+  output = result.value;
+  return result.valid;
+}
+
+template &lt;typename CharT, typename VALUE&gt;
+bool HexStringToIntImpl(BasicStringPiece&lt;CharT&gt; input, VALUE&amp; output) {
+  auto result = StringToNumber&lt;VALUE, 16&gt;(input);
+  output = result.value;
+  return result.valid;
+}
+
+static const double_conversion::DoubleToStringConverter*
+GetDoubleToStringConverter() {
+  static NoDestructor&lt;double_conversion::DoubleToStringConverter&gt; converter(
+      double_conversion::DoubleToStringConverter::EMIT_POSITIVE_EXPONENT_SIGN,
+      nullptr, nullptr, &apos;e&apos;, -6, 12, 0, 0);
+  return converter.get();
+}
+
+// Converts a given (data, size) pair to a desired string type. For
+// performance reasons, this dispatches to a different constructor if the
+// passed-in data matches the string&apos;s value_type.
+template &lt;typename StringT&gt;
+StringT ToString(const typename StringT::value_type* data, size_t size) {
+  return StringT(data, size);
+}
+
+template &lt;typename StringT, typename CharT&gt;
+StringT ToString(const CharT* data, size_t size) {
+  return StringT(data, data + size);
+}
+
+template &lt;typename StringT&gt;
+StringT DoubleToStringT(double value) {
+  char buffer[32];
+  double_conversion::StringBuilder builder(buffer, sizeof(buffer));
+  GetDoubleToStringConverter()-&gt;ToShortest(value, &amp;builder);
+  return ToString&lt;StringT&gt;(buffer, builder.position());
+}
+
+template &lt;typename STRING, typename CHAR&gt;
+bool StringToDoubleImpl(STRING input, const CHAR* data, double&amp; output) {
+  static NoDestructor&lt;double_conversion::StringToDoubleConverter&gt; converter(
+      double_conversion::StringToDoubleConverter::ALLOW_LEADING_SPACES |
+          double_conversion::StringToDoubleConverter::ALLOW_TRAILING_JUNK,
+      0.0, 0, nullptr, nullptr);
+
+  int processed_characters_count;
+  output = converter-&gt;StringToDouble(data, input.size(),
+                                     &amp;processed_characters_count);
+
+  // Cases to return false:
+  //  - If the input string is empty, there was nothing to parse.
+  //  - If the value saturated to HUGE_VAL.
+  //  - If the entire string was not processed, there are either characters
+  //    remaining in the string after a parsed number, or the string does not
+  //    begin with a parseable number.
+  //  - If the first character is a space, there was leading whitespace
+  return !input.empty() &amp;&amp; output != HUGE_VAL &amp;&amp; output != -HUGE_VAL &amp;&amp;
+         static_cast&lt;size_t&gt;(processed_characters_count) == input.size() &amp;&amp;
+         !IsUnicodeWhitespace(input[0]);
+}
+
+template &lt;typename OutIter&gt;
+static bool HexStringToByteContainer(StringPiece input, OutIter output) {
+  size_t count = input.size();
+  if (count == 0 || (count % 2) != 0)
+    return false;
+  for (uintptr_t i = 0; i &lt; count / 2; ++i) {
+    // most significant 4 bits
+    Optional&lt;uint8_t&gt; msb = CharToDigit&lt;16&gt;(input[i * 2]);
+    // least significant 4 bits
+    Optional&lt;uint8_t&gt; lsb = CharToDigit&lt;16&gt;(input[i * 2 + 1]);
+    if (!msb || !lsb) {
+      return false;
+    }
+    *(output++) = (*msb &lt;&lt; 4) | *lsb;
+  }
+  return true;
+}
+
+}  // namespace internal
+
+}  // namespace base
+</code></pre>
+<h3 id="fuzzer"><a name="fuzzer" class="anchor-navigation-ex-anchor" href="#fuzzer"><i class="fa fa-link" aria-hidden="true"></i></a>fuzzer</h3>
+<pre><code class="lang-cpp">// base/strings/string_number_conversions_fuzzer.cc
+template &lt;class NumberType, class StringPieceType, class StringType&gt;
+void CheckRoundtripsT(const uint8_t* data,
+                      const size_t size,
+                      StringType (*num_to_string)(NumberType),
+                      bool (*string_to_num)(StringPieceType, NumberType*)) {
+  // Ensure we can read a NumberType from |data|
+  if (size &lt; sizeof(NumberType))
+    return;
+  const NumberType v1 = *reinterpret_cast&lt;const NumberType*&gt;(data);
+
+  // Because we started with an arbitrary NumberType value, not an arbitrary
+  // string, we expect that the function |string_to_num| (e.g. StringToInt) will
+  // return true, indicating a perfect conversion.
+  NumberType v2;
+  CHECK(string_to_num(num_to_string(v1), &amp;v2));
+
+  // Given that this was a perfect conversion, we expect the original NumberType
+  // value to equal the newly parsed one.
+  CHECK_EQ(v1, v2);
+}
+
+template &lt;class NumberType&gt;
+void CheckRoundtrips(const uint8_t* data,
+                     const size_t size,
+                     bool (*string_to_num)(base::StringPiece, NumberType*)) {
+  return CheckRoundtripsT&lt;NumberType, base::StringPiece, std::string&gt;(
+      data, size, &amp;base::NumberToString, string_to_num);
+}
+
+template &lt;class NumberType&gt;
+void CheckRoundtrips16(const uint8_t* data,
+                       const size_t size,
+                       bool (*string_to_num)(base::StringPiece16,
+                                             NumberType*)) {
+  return CheckRoundtripsT&lt;NumberType, base::StringPiece16, std::u16string&gt;(
+      data, size, &amp;base::NumberToString16, string_to_num);
+}
+
+// Entry point for LibFuzzer.
+extern &quot;C&quot; int LLVMFuzzerTestOneInput(const uint8_t* data, size_t size) {
+  // For each instantiation of NumberToString f and its corresponding StringTo*
+  // function g, check that f(g(x)) = x holds for fuzzer-determined values of x.
+  CheckRoundtrips&lt;int&gt;(data, size, &amp;base::StringToInt);
+  CheckRoundtrips16&lt;int&gt;(data, size, &amp;base::StringToInt);
+  CheckRoundtrips&lt;unsigned int&gt;(data, size, &amp;base::StringToUint);
+  CheckRoundtrips16&lt;unsigned int&gt;(data, size, &amp;base::StringToUint);
+  CheckRoundtrips&lt;int64_t&gt;(data, size, &amp;base::StringToInt64);
+  CheckRoundtrips16&lt;int64_t&gt;(data, size, &amp;base::StringToInt64);
+  CheckRoundtrips&lt;uint64_t&gt;(data, size, &amp;base::StringToUint64);
+  CheckRoundtrips16&lt;uint64_t&gt;(data, size, &amp;base::StringToUint64);
+  CheckRoundtrips&lt;size_t&gt;(data, size, &amp;base::StringToSizeT);
+  CheckRoundtrips16&lt;size_t&gt;(data, size, &amp;base::StringToSizeT);
+
+  base::StringPiece string_piece_input(reinterpret_cast&lt;const char*&gt;(data),
+                                       size);
+  std::string string_input(reinterpret_cast&lt;const char*&gt;(data), size);
+
+  int out_int;
+  base::StringToInt(string_piece_input, &amp;out_int);
+  unsigned out_uint;
+  base::StringToUint(string_piece_input, &amp;out_uint);
+  int64_t out_int64;
+  base::StringToInt64(string_piece_input, &amp;out_int64);
+  uint64_t out_uint64;
+  base::StringToUint64(string_piece_input, &amp;out_uint64);
+  size_t out_size;
+  base::StringToSizeT(string_piece_input, &amp;out_size);
+
+  // Test for StringPiece16 if size is even.
+  if (size % 2 == 0) {
+    base::StringPiece16 string_piece_input16(
+        reinterpret_cast&lt;const char16_t*&gt;(data), size / 2);
+
+    base::StringToInt(string_piece_input16, &amp;out_int);
+    base::StringToUint(string_piece_input16, &amp;out_uint);
+    base::StringToInt64(string_piece_input16, &amp;out_int64);
+    base::StringToUint64(string_piece_input16, &amp;out_uint64);
+    base::StringToSizeT(string_piece_input16, &amp;out_size);
+  }
+
+  double out_double;
+  base::StringToDouble(string_input, &amp;out_double);
+
+  base::HexStringToInt(string_piece_input, &amp;out_int);
+  base::HexStringToUInt(string_piece_input, &amp;out_uint);
+  base::HexStringToInt64(string_piece_input, &amp;out_int64);
+  base::HexStringToUInt64(string_piece_input, &amp;out_uint64);
+  std::vector&lt;uint8_t&gt; out_bytes;
+  base::HexStringToBytes(string_piece_input, &amp;out_bytes);
+
+  base::HexEncode(data, size);
+
+  // Convert the numbers back to strings.
+  base::NumberToString(out_int);
+  base::NumberToString16(out_int);
+  base::NumberToString(out_uint);
+  base::NumberToString16(out_uint);
+  base::NumberToString(out_int64);
+  base::NumberToString16(out_int64);
+  base::NumberToString(out_uint64);
+  base::NumberToString16(out_uint64);
+  base::NumberToString(out_double);
+  base::NumberToString16(out_double);
+
+  return 0;
+}
+</code></pre>
+<h3 id="windows_1"><a name="windows_1" class="anchor-navigation-ex-anchor" href="#windows_1"><i class="fa fa-link" aria-hidden="true"></i></a>windows</h3>
+<pre><code class="lang-cpp"><span class="hljs-comment">// base/strings/string_number_conversions_win.cc</span>
+<span class="hljs-keyword">namespace</span> base {
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">int</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::IntToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-built_in">std</span>::<span class="hljs-function">wstring <span class="hljs-title">NumberToWString</span><span class="hljs-params">(<span class="hljs-keyword">double</span> value)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::DoubleToStringT&lt;<span class="hljs-built_in">std</span>::wstring&gt;(value);
+}
+
+<span class="hljs-keyword">namespace</span> internal {
+
+<span class="hljs-keyword">template</span> &lt;&gt;
+<span class="hljs-keyword">class</span> WhitespaceHelper&lt;<span class="hljs-keyword">wchar_t</span>&gt; {
+ <span class="hljs-keyword">public</span>:
+  <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">Invoke</span><span class="hljs-params">(wchar_t c)</span> </span>{ <span class="hljs-keyword">return</span> <span class="hljs-number">0</span> != iswspace(c); }
+};
+
+}  <span class="hljs-comment">// namespace internal</span>
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">int</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">unsigned</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToInt64</span><span class="hljs-params">(WStringPiece input, int64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToUint64</span><span class="hljs-params">(WStringPiece input, uint64_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToSizeT</span><span class="hljs-params">(WStringPiece input, size_t* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToIntImpl(input, *output);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">StringToDouble</span><span class="hljs-params">(WStringPiece input, <span class="hljs-keyword">double</span>* output)</span> </span>{
+  <span class="hljs-keyword">return</span> internal::StringToDoubleImpl(
+      input, <span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">uint16_t</span>*&gt;(input.data()), *output);
+}
+
+}  <span class="hljs-comment">// namespace base</span>
+</code></pre>
+<p></p><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz',appKey: 'snSYunAWY2mBjfimkM7wlTk9',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: 字符串（strings）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="zi-fu-chuan-bian-ma-zhuan-huan.html" class="navigation navigation-next " aria-label="Next page: 字符串编码转换">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"chrome中字符串类型转换","title":"字符串类型转换","level":"1.6.3.12.1","depth":4,"next":{"title":"字符串编码转换","level":"1.6.3.12.2","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.md","articles":[]},"previous":{"title":"字符串（strings）","level":"1.6.3.12","depth":3,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/README.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/README.md","articles":[{"title":"字符串类型转换","level":"1.6.3.12.1","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.md","articles":[]},{"title":"字符串编码转换","level":"1.6.3.12.2","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-bian-ma-zhuan-huan.md","articles":[]},{"title":"跨平台字符处理","level":"1.6.3.12.3","depth":4,"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.md","ref":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/kua-ping-tai-zi-fu-chu-li.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","expandable-chapters-small","splitter","lightbox","anchor-navigation-ex","-lunr","-search","search-pro","pageview-count","code","-sharing","sharing-plus","donate","auto-scroll-table","accordion","valine"],"ignores":["_book","node_modules"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"splitter":{},"search-pro":{},"accordion":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"auto-scroll-table":{},"code":{"copyButtons":true},"donate":{"alipay":"https://gitee.com/zsdp/chromeimage/raw/master/zhifubao.png","alipayText":"支付宝捐赠","button":"Donate","title":"","wechat":"https://gitee.com/zsdp/chromeimage/raw/master/weixin.png","wechatText":"微信捐赠"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":false,"showLevel":false},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"pageview-count":{},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["douban","facebook","google","instapaper","linkedin","twitter","weibo","messenger","qq","qzone","viber","whatsapp"],"douban":true,"facebook":true,"weibo":true,"twitter":true,"pocket":true,"google":true,"qzone":true},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz","appKey":"snSYunAWY2mBjfimkM7wlTk9"}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Chrome知识店铺","language":"zh-hans","gitbook":"*","description":"分享Chrome相关知识"},"file":{"path":"ji-shu-fen-xi/ji-chu-ku/zi-fu-chuan-strings/zi-fu-chuan-lei-xing-zhuan-huan.md","mtime":"2021-05-08T00:29:24.751Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2021-05-08T00:30:12.656Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-auto-scroll-table/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-accordion/accordionSelector.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
