@@ -17,7 +17,8 @@
         "sharing-plus",
         "donate",
         "auto-scroll-table",
-        "accordion"
+        "accordion",
+        "valine"
     ],
     "pluginsConfig": {
         "sharing": {
@@ -47,6 +48,10 @@
         "anchor-navigation-ex": {
             "showLevel": false,
             "showGoTop": false
+        },
+        "valine": {
+            "appId": "yXcCO0WwH1N4pXiJ4a7cLaJV-gzGzoHsz",
+            "appKey": "snSYunAWY2mBjfimkM7wlTk9"
         },
         "donate": {
             "wechat": "https://gitee.com/zsdp/chromeimage/raw/master/weixin.png",
